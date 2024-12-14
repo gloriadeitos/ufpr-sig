@@ -105,7 +105,6 @@ footer p{
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     z-index: 1000;
-    max-height: 200px;
     overflow-y: auto;
     font-size: 14px;
     color: #333;
@@ -116,6 +115,15 @@ footer p{
     font-size: 16px;
     color: #333;
 }
+
+#legend-container h5 {
+    margin: 4px 0 8px 0 ;
+}
+
+#legend-container li {
+    font-size: 13px;
+}
+
 
 .legenda{
     vertical-align: middle;

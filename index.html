@@ -39,53 +39,55 @@
         <h3>Camadas</h3>
         <hr>
         <div id="map1">
-            <h4 style="padding-bottom: 5px;">Mapa 01<br> Bairros Saudáveis: Localização de Parques, Ciclovias e Transporte Público</h4>
+            <h4 style="padding-bottom: 5px;">Mapa 01<br> Bairros Saudáveis: Localização de Parques, Ciclovias e
+                Transporte Público</h4>
             <label><input type="checkbox" class="layer-toggle" data-layer="6" checked> Terminal de ônibus</label>
-            <label><input type="checkbox" class="layer-toggle" data-layer="5" checked> Zonas de influência dos terminais de ônibus (Diagrama Voronoi)</label>
+            <label><input type="checkbox" class="layer-toggle" data-layer="5" checked> Zonas de influência dos terminais
+                de ônibus (Diagrama Voronoi)</label>
             <label><input type="checkbox" class="layer-toggle" data-layer="4" checked> Ciclovia</label>
             <label><input type="checkbox" class="layer-toggle" data-layer="3" checked> Parques e Bosques</label>
             <label><input type="checkbox" class="layer-toggle" data-layer="2" checked> Praças e Jardinetes</label>
             <label><input type="checkbox" class="layer-toggle" data-layer="1" checked> Bairros de Curitiba</label>
             <button id="toggle-all-layers-map1" data-container="map1">Ativar/Desativar Todas as Camadas</button>
+            <button id="view-pdf">
+                <a href="./pdf/Mapa01-ODS11-BairrosSaudaveis-GloriaDeitos.pdf" target="_blank"
+                    style="text-decoration: none; color: inherit;">
+                    Visualizar PDF
+                </a>
+            </button>
+            <button id="download-pdf">
+                <a href="./pdf/Mapa01-ODS11-BairrosSaudaveis-GloriaDeitos.pdf" download
+                    style="text-decoration: none; color: inherit;">
+                    Baixar PDF
+                </a>
+            </button>
         </div>
-        
-        <button id="view-pdf">
-            <a href="./pdf/Mapa01-ODS11-BairrosSaudaveis-GloriaDeitos.pdf" target="_blank"
-                style="text-decoration: none; color: inherit;">
-                Visualizar PDF
-            </a>
-        </button>
-        <button id="download-pdf">
-            <a href="./pdf/Mapa01-ODS11-BairrosSaudaveis-GloriaDeitos.pdf" download
-                style="text-decoration: none; color: inherit;">
-                Baixar PDF
-            </a>
-        </button>
         <hr>
         <div id="map2">
-            <h4 style="padding-bottom: 5px;">Mapa 02<br> Mapa de Risco: Áreas de Ocupação Irregular com Potencial de Alagamento</h4>
+            <h4 style="padding-bottom: 5px;">Mapa 02<br> Mapa de Risco: Áreas de Ocupação Irregular com Potencial de
+                Alagamento</h4>
             <label><input type="checkbox" class="layer-toggle" data-layer="9"> Áreas inundáveis</label>
             <label><input type="checkbox" class="layer-toggle" data-layer="7"> Áreas de Ocupação Irregular</label>
             <label><input type="checkbox" class="layer-toggle" data-layer="8"> Rios</label>
             <label><input type="checkbox" class="layer-toggle" data-layer="1" checked> Bairros de Curitiba</label>
             <button id="toggle-all-layers-map2" data-container="map2">Ativar/Desativar Todas as Camadas</button>
+            <button id="view-pdf">
+                <a href="./pdf/Mapa02-ODS11-MapaRisco-GloriaDeitos.pdf" target="_blank"
+                    style="text-decoration: none; color: inherit;">
+                    Visualizar PDF
+                </a>
+            </button>
+            <button id="download-pdf">
+                <a href="./pdf/Mapa02-ODS11-MapaRisco-GloriaDeitos.pdf" download
+                    style="text-decoration: none; color: inherit;">
+                    Baixar PDF
+                </a>
+            </button>
         </div>
-        <button id="view-pdf">
-            <a href="./pdf/Mapa02-ODS11-MapaRisco-GloriaDeitos.pdf" target="_blank"
-                style="text-decoration: none; color: inherit;">
-                Visualizar PDF
-            </a>
-        </button>
-        <button id="download-pdf">
-            <a href="./pdf/Mapa02-ODS11-MapaRisco-GloriaDeitos.pdf" download
-                style="text-decoration: none; color: inherit;">
-                Baixar PDF
-            </a>
-        </button>
         <hr>
         <h4 style="padding-bottom: 5px;">Mapa 03<br> Cobertura Verde: Percentual de Parques e Bosques nos Bairros de
             Curitiba</h4>
-            <label><input type="checkbox" class="layer-toggle" data-layer="10"> Porcentagem de parques e bosques</label>
+        <label><input type="checkbox" class="layer-toggle" data-layer="10"> Porcentagem de parques e bosques</label>
         <button id="view-pdf">
             <a href="./pdf/Mapa03-ODS11-CoberturaVerde-GloriaDeitos.pdf" target="_blank"
                 style="text-decoration: none; color: inherit;">
@@ -101,34 +103,92 @@
     </div>
 
     <div id="legend-container">
-        <h3>Legenda</h3>
-        <ul style="list-style: none; padding: 0; font-size: 14px; color: #333;">
-            <li>
-                <img src="./styles/legend/terminal.png" alt="Terminal de ônibus" class="legenda">
-                Terminal de ônibus
-            </li>
-            <li>
-                <img src="./styles/legend/zona-influencia.png" alt="Zonas de influência dos terminais de ônibus"
-                    class="legenda">
-                Zonas de influência dos terminais de ônibus
-            </li>
-            <li>
-                <img src="./styles/legend/ciclovia.png" alt="Ciclovia" class="legenda">
-                Ciclovia
-            </li>
-            <li>
-                <img src="./styles/legend/parque-bosque.png" alt="Parques e Bosques" class="legenda">
-                Parques e Bosques
-            </li>
-            <li>
-                <img src="./styles/legend/praca-jardinete.png" alt="Praças e Jardinetes" class="legenda">
-                Praças e Jardinetes
-            </li>
-            <li>
-                <img src="./styles/legend/divisa-bairro.png" alt="Divisa de Bairros" class="legenda">
-                Divisa de Bairros
-            </li>
-        </ul>
+        <!-- Legenda Mapa 01 -->
+        <div id="legend-map1" style="display: none;">
+            <h4>Mapa 01</h4>
+            <h5>Bairros Saudáveis: Localização de Parques, Ciclovias e Transporte Público</h5>
+            <hr>
+            <h4>Legenda</h4>
+            <ul style="list-style: none; padding: 0; font-size: 14px; color: #333;">
+                <li>
+                    <img src="./styles/legend/terminal.png" alt="Terminal de ônibus" class="legenda">
+                    Terminal de ônibus
+                </li>
+                <li>
+                    <img src="./styles/legend/zona-influencia.png" alt="Zonas de influência dos terminais de ônibus"
+                        class="legenda">
+                    Zonas de influência dos terminais de ônibus
+                </li>
+                <li>
+                    <img src="./styles/legend/ciclovia.png" alt="Ciclovia" class="legenda">
+                    Ciclovia
+                </li>
+                <li>
+                    <img src="./styles/legend/parque-bosque.png" alt="Parques e Bosques" class="legenda">
+                    Parques e bosques
+                </li>
+                <li>
+                    <img src="./styles/legend/praca-jardinete.png" alt="Praças e Jardinetes" class="legenda">
+                    Praças e jardinetes
+                </li>
+                <li>
+                    <img src="./styles/legend/divisa-bairro.png" alt="Praças e Jardinetes" class="legenda">
+                    Divisa de bairros
+                </li>
+            </ul>
+        </div>
+
+        <!-- Legenda Mapa 02 -->
+        <div id="legend-map2" style="display: none;">
+            <h4>Mapa 02</h4>
+            <h5>Mapa de Risco: Áreas de Ocupação Irregular com Potencial de Alagamento</h5>
+            <hr>
+            <h4>Legenda</h4>
+            <ul style="list-style: none; padding: 0; font-size: 14px; color: #333;">
+                <li>
+                    <img src="./styles/legend/ocupacao-irregular.png" alt="Áreas de Ocupação Irregular" class="legenda">
+                    Áreas de Ocupação Irregular
+                </li>
+                <li>
+                    <img src="./styles/legend/areas-inundaveis.png" alt="Áreas Inundáveis" class="legenda">
+                    Áreas Inundáveis
+                </li>
+                <li>
+                    <img src="./styles/legend/rio.png" alt="Rios" class="legenda">
+                    Rios
+                </li>
+                <li>
+                    <img src="./styles/legend/divisa-bairro.png" alt="Praças e Jardinetes" class="legenda">
+                    Divisa de bairros
+                </li>
+            </ul>
+        </div>
+
+        <!-- Legenda Mapa 03 -->
+        <div id="legend-map3" style="display: none;">
+            <h4>Mapa 03</h4>
+            <h5>Cobertura Verde: Percentual de Parques e Bosques nos Bairros de Curitiba</h5>
+            <hr>
+            <h4>Legenda</h4>
+            <h5>Porcentagem de parques e bosques por área total do bairro</h5>
+            <ul style="list-style: none; padding: 0; font-size: 14px; color: #333;">
+                <img src="./styles/legend/1.png" class="legenda"/> 0 - 0.3<br />
+                <img src="./styles/legend/2.png" class="legenda"/> 0.4 - 1.62<br />
+                <img src="./styles/legend/3.png" class="legenda"/> 1.63 - 4.51<br />
+                <img src="./styles/legend/4.png" class="legenda"/> 4.52 - 7.22<br />
+                <img src="./styles/legend/5.png" class="legenda"/> 7.23 - 10.13<br />
+            </ul>
+        </div>
+        <!-- Legenda Bairros de Curitiba (usado em ambos os mapas) -->
+        <div id="legend-bairros" style="display: none;">
+            <h4>Bairros de Curitiba</h4>
+            <ul style="list-style: none; padding: 0; font-size: 14px; color: #333;">
+                <li>
+                    <img src="./styles/legend/divisa-bairro.png" alt="Divisa de Bairros" class="legenda">
+                    Divisa de Bairros
+                </li>
+            </ul>
+        </div>
     </div>
 
     <footer>
@@ -145,9 +205,10 @@
     <script src="layers/PRACAS_E_JARDINETES_2.js"></script> <!-- Camada 2: Praças e Jardinetes -->
     <script src="layers/PARQUES_E_BOSQUES_3.js"></script> <!-- Camada 3: Parques e Bosques -->
     <script src="layers/CICLOVIA_OFICIAL_4.js"></script> <!-- Camada 4: Ciclovia -->
-    <script src="layers/terminalvoronoi_5.js"></script> <!-- Camada 5: Zonas de influência dos terminais de ônibus (Diagrama Voronoi) -->
+    <script src="layers/terminalvoronoi_5.js"></script>
+    <!-- Camada 5: Zonas de influência dos terminais de ônibus (Diagrama Voronoi) -->
     <script src="layers/TERMINAL_DE_TRANSPORTE_6.js"></script> <!-- Camada 6: Terminal de ônibus -->
-    
+
     <script src="styles/DIVISA_DE_BAIRROS_1_style.js"></script> <!-- Estilo para a Camada 1 -->
     <script src="styles/PRACAS_E_JARDINETES_2_style.js"></script> <!-- Estilo para a Camada 2 -->
     <script src="styles/PARQUES_E_BOSQUES_3_style.js"></script> <!-- Estilo para a Camada 3 -->
@@ -156,7 +217,8 @@
     <script src="styles/TERMINAL_DE_TRANSPORTE_6_style.js"></script> <!-- Estilo para a Camada 6 -->
 
     <!-- MAPA02 -->
-    <script src="layers/OCUPACAO_IRREGULAR_2.js"></script> <!-- Camada 7: Áreas de Ocupação Irregular com Potencial de Alagamento -->
+    <script src="layers/OCUPACAO_IRREGULAR_2.js"></script>
+    <!-- Camada 7: Áreas de Ocupação Irregular com Potencial de Alagamento -->
     <script src="layers/HIDRO_RIOS_LN_3.js"></script> <!-- Camada 8: Rios -->
     <script src="layers/Interseo_4.js"></script> <!-- Camada 9: Interseções (possível área de estudo) -->
 
@@ -180,27 +242,30 @@
             const layerIndex = parseInt(toggle.dataset.layer, 10);
             const layer = map.getLayers().item(layerIndex);
             layer.setVisible(toggle.checked);
-    
+
             // Adiciona o evento para cada checkbox
             toggle.addEventListener('change', function () {
                 const layerIndex = parseInt(this.dataset.layer, 10);
                 map.getLayers().item(layerIndex).setVisible(this.checked);
+                updateLegends(); // Atualizar as legendas após a mudança
             });
         });
-    
+
         // Função para ativar/desativar todas as camadas de um mapa específico
         function toggleLayersForMap(containerId) {
             const container = document.getElementById(containerId);
             const toggles = container.querySelectorAll('.layer-toggle');
             const allChecked = Array.from(toggles).every(toggle => toggle.checked);
-    
+
             toggles.forEach(toggle => {
                 toggle.checked = !allChecked;
                 const layerIndex = parseInt(toggle.dataset.layer, 10);
                 map.getLayers().item(layerIndex).setVisible(!allChecked);
             });
+
+            updateLegends(); // Atualizar as legendas após a alteração
         }
-    
+
         // Configurar os botões de ativar/desativar todas as camadas de forma independente
         document.querySelectorAll('button[id^="toggle-all-layers"]').forEach(button => {
             button.addEventListener('click', function () {
@@ -208,10 +273,11 @@
                 toggleLayersForMap(containerId);
             });
         });
-    
+
+        // Função para exibir/ocultar o menu de camadas
         const menuToggle = document.getElementById('menu-toggle');
         const featureBox = document.getElementById('feature-box');
-    
+
         menuToggle.addEventListener('click', () => {
             if (featureBox.style.display === 'none') {
                 featureBox.style.display = 'block';
@@ -221,12 +287,63 @@
                 menuToggle.innerHTML = '<i class="fas fa-layer-group"></i>'; // Ícone de camadas
             }
         });
-    
+
         // Inicialmente, o menu está fechado
         featureBox.style.display = 'none';
+
+
+        // == LEGENDAS
+
+        function updateLegends() {
+            // Esconde todas as legendas inicialmente
+            document.querySelectorAll('#legend-container > div').forEach(legend => {
+                legend.style.display = 'none';
+            });
+
+            // Obtém o estado das camadas
+            const layersVisibility = [];
+            map.getLayers().forEach((layer, index) => {
+                layersVisibility[index] = layer.getVisible();
+            });
+
+            // Regras para exibição das legendas
+            const isLayer1Active = layersVisibility[1]; // Bairros de Curitiba
+            const isLayer2To6Active = layersVisibility.slice(2, 7).some(visible => visible); // Camadas 2 a 6
+            const isLayer7To9Active = layersVisibility.slice(7, 10).some(visible => visible); // Camadas 7 a 9
+            const isLayer10Active = layersVisibility[10]; // Porcentagem de parques e bosques
+
+            // Determina qual legenda mostrar com base nas condições
+            if (isLayer2To6Active) {
+                document.getElementById('legend-map1').style.display = 'block'; // Legenda 1
+            }
+            if (isLayer7To9Active) {
+                document.getElementById('legend-map2').style.display = 'block'; // Legenda 2
+            }
+            if (isLayer1Active && !isLayer2To6Active && !isLayer7To9Active && !isLayer10Active) {
+                document.getElementById('legend-map4').style.display = 'block'; // Legenda 4
+            }
+            if (isLayer10Active) {
+                document.getElementById('legend-map3').style.display = 'block'; // Legenda 3
+            }
+        }
+
+        // Atualiza as legendas quando a página é carregada e ao interagir com os checkboxes
+        document.querySelectorAll('.layer-toggle').forEach(input => {
+            input.addEventListener('change', () => {
+                const layerIndex = parseInt(input.getAttribute('data-layer'));
+                const layer = map.getLayers().item(layerIndex);
+                layer.setVisible(input.checked);
+                updateLegends();
+            });
+        });
+
+        // Inicializa as legendas corretamente ao carregar a página
+        window.addEventListener('DOMContentLoaded', () => {
+            updateLegends();
+        });
+
     </script>
-    
-    
+
 </body>
 
 </html>
