@@ -299,6 +299,14 @@
             // Atualizar a visibilidade da camada com base no estado do checkbox
             const layer = map.getLayers().item(10); // Camada 10 corresponde ao índice 9 (contagem começa do 0)
             layer.setVisible(checkbox.checked);
+
+            // Mostrar ou ocultar a legenda com base na visibilidade da camada
+            const legendMap3 = document.getElementById('legend-map3');
+            if (checkbox.checked) {
+                legendMap3.style.display = 'block'; // Exibir a legenda
+            } else {
+                legendMap3.style.display = 'none';  // Ocultar a legenda
+            }
         });
 
         // Configurar os toggles de camadas para cada mapa separadamente
