@@ -6,43 +6,87 @@
         <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-capable" content="yes">
+
         <link rel="stylesheet" href="./resources/ol.css">
         <link rel="stylesheet" href="resources/fontawesome-all.min.css">
         <link rel="stylesheet" href="./resources/ol-layerswitcher.css">
         <link rel="stylesheet" href="./resources/qgis2web.css">
+
         <style>
         html, body {
             background-color: #ffffff;
-        }
-        .ol-control > * {
-            background-color: #f8f8f8!important;
-            color: #444444!important;
-            border-radius: 0px;
-        }
-        .ol-attribution a, .gcd-gl-input::placeholder, .search-layer-input-search::placeholder {
-            color: #444444!important;
-        }
-        .search-layer-input-search {
-            background-color: #f8f8f8!important;
-        }
-        .ol-control > *:focus, .ol-control >*:hover {
-            background-color: rgba(248, 248, 248, 0.7)!important;
-        } 
-        .ol-control {
-            background-color: rgba(255,255,255,.4) !important;
-            padding: 2px !important;
-        } 
-        </style>
-
-        <style>
-        html, body, #map {
             width: 100%;
             height: 100%;
-            padding: 0;
             margin: 0;
+            padding: 0;
+        }
+
+        #map {
+            width: 100%;
+            height: 100%;
+        }
+
+        #feature-box {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        #feature-box h3 {
+            margin: 0 0 10px;
+            font-size: 16px;
+            color: #333;
+        }
+
+        #feature-box label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 14px;
+        }
+
+        .ol-control > * {
+            background-color: #f8f8f8 !important;
+            color: #444 !important;
+            border-radius: 0px;
+        }
+
+        .ol-control > *:focus, .ol-control >*:hover {
+            background-color: rgba(248, 248, 248, 0.7) !important;
+        }
+
+        #menu-toggle {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: lightgray;
+            color: black;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            z-index: 1100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #menu-toggle:hover {
+            background-color: rgb(181, 181, 181);
+            color: white;
+        }
+
+        #menu-toggle i {
+            font-size: 16px; /* Ajusta o tamanho do ícone */
         }
         </style>
-        <title></title>
+
+        <title>Mapa Interativo</title>
     </head>
     <body>
         <div id="map">
@@ -51,14 +95,80 @@
                 <div id="popup-content"></div>
             </div>
         </div>
+
+        <button id="menu-toggle"><i class="fas fa-times"></i></button>
+
+        <div id="feature-box" style="margin-top: 50px;">
+            <h3>Análise Geoespacial da ODS 11: Mapas de Desenvolvimento Sustentável</h3>
+            <hr>
+            <h4>Mapa 01 → Bairros Saudáveis: Localização de Parques, Ciclovias e Transporte Público</h4>
+            <label><input type="checkbox" class="layer-toggle" data-layer="1" checked> Divisa de Bairros</label>
+            <label><input type="checkbox" class="layer-toggle" data-layer="2" checked> Praças e Jardinetes</label>
+            <label><input type="checkbox" class="layer-toggle" data-layer="3" checked> Parques e Bosques</label>
+            <label><input type="checkbox" class="layer-toggle" data-layer="4" checked> Ciclovia Oficial</label>
+            <label><input type="checkbox" class="layer-toggle" data-layer="5" checked> Terminal Voronoi</label>
+            <label><input type="checkbox" class="layer-toggle" data-layer="6" checked> Terminal de Transporte</label>
+            <button id="toggle-all-layers">Ativar/Desativar Todas as Camadas</button>
+            <hr>
+            <h4>Curso: Engenharia Cartográfica e de Agrimensura<br>
+                Disciplina: Sistemas de Informações Geográficas<br>
+                Autora: Glória Maria Deitos Gomes da Silva<br><br>
+                13.Dezembro.2024</h4>
+        </div>
+
         <script src="resources/qgis2web_expressions.js"></script>
         <script src="./resources/functions.js"></script>
         <script src="./resources/ol.js"></script>
         <script src="./resources/ol-layerswitcher.js"></script>
-        <script src="layers/DIVISA_DE_BAIRROS_1.js"></script><script src="layers/PRACAS_E_JARDINETES_2.js"></script><script src="layers/PARQUES_E_BOSQUES_3.js"></script><script src="layers/CICLOVIA_OFICIAL_4.js"></script><script src="layers/terminalvoronoi_5.js"></script><script src="layers/TERMINAL_DE_TRANSPORTE_6.js"></script>
-        <script src="styles/DIVISA_DE_BAIRROS_1_style.js"></script><script src="styles/PRACAS_E_JARDINETES_2_style.js"></script><script src="styles/PARQUES_E_BOSQUES_3_style.js"></script><script src="styles/CICLOVIA_OFICIAL_4_style.js"></script><script src="styles/terminalvoronoi_5_style.js"></script><script src="styles/TERMINAL_DE_TRANSPORTE_6_style.js"></script>
-        <script src="./layers/layers.js" type="text/javascript"></script> 
+        <script src="layers/DIVISA_DE_BAIRROS_1.js"></script>
+        <script src="layers/PRACAS_E_JARDINETES_2.js"></script>
+        <script src="layers/PARQUES_E_BOSQUES_3.js"></script>
+        <script src="layers/CICLOVIA_OFICIAL_4.js"></script>
+        <script src="layers/terminalvoronoi_5.js"></script>
+        <script src="layers/TERMINAL_DE_TRANSPORTE_6.js"></script>
+        <script src="styles/DIVISA_DE_BAIRROS_1_style.js"></script>
+        <script src="styles/PRACAS_E_JARDINETES_2_style.js"></script>
+        <script src="styles/PARQUES_E_BOSQUES_3_style.js"></script>
+        <script src="styles/CICLOVIA_OFICIAL_4_style.js"></script>
+        <script src="styles/terminalvoronoi_5_style.js"></script>
+        <script src="styles/TERMINAL_DE_TRANSPORTE_6_style.js"></script>
+        <script src="./layers/layers.js" type="text/javascript"></script>
         <script src="./resources/Autolinker.min.js"></script>
         <script src="./resources/qgis2web.js"></script>
+
+        <script>
+        document.querySelectorAll('.layer-toggle').forEach(toggle => {
+            toggle.addEventListener('change', function () {
+                const layerIndex = parseInt(this.dataset.layer, 10);
+                map.getLayers().item(layerIndex).setVisible(this.checked);
+            });
+        });
+
+        document.getElementById('toggle-all-layers').addEventListener('click', () => {
+            const toggles = document.querySelectorAll('.layer-toggle');
+            const allChecked = Array.from(toggles).every(toggle => toggle.checked);
+            toggles.forEach(toggle => {
+                toggle.checked = !allChecked;
+                const layerIndex = parseInt(toggle.dataset.layer, 10);
+                map.getLayers().item(layerIndex).setVisible(!allChecked);
+            });
+        });
+
+        const menuToggle = document.getElementById('menu-toggle');
+        const featureBox = document.getElementById('feature-box');
+
+        menuToggle.addEventListener('click', () => {
+            if (featureBox.style.display === 'none') {
+                featureBox.style.display = 'block';
+                menuToggle.innerHTML = '<i class="fas fa-times"></i>'; // Ícone de fechar
+            } else {
+                featureBox.style.display = 'none';
+                menuToggle.innerHTML = '<i class="fas fa-bars"></i>'; // Ícone de menu (barras)
+            }
+        });
+
+        // Inicialmente, o menu está visível com o ícone de fechar
+        featureBox.style.display = 'block';
+        </script>
     </body>
 </html>
