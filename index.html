@@ -68,19 +68,19 @@
     <button class="icon-button document-toggle"><i class="fas fa-file-alt"></i></button>
 
     <!-- Ícone de Número 1 -->
-    <button class="icon-button number-toggle-1">
+    <button class="icon-button number-toggle-1" id="toggle-all-layers-map1" data-container="map1">
         <i class="fas fa-map" style="margin-right: 5px;"></i>
         <i class="fas fa-1"></i>
     </button>
 
     <!-- Ícone de Número 2 -->
-    <button class="icon-button number-toggle-2">
+    <button class="icon-button number-toggle-2" id="toggle-all-layers-map2" data-container="map2">
         <i class="fas fa-map" style="margin-right: 5px;"></i>
         <i class="fas fa-2"></i>
     </button>
 
     <!-- Ícone de Número 3 -->
-    <button class="icon-button number-toggle-3">
+    <button class="icon-button number-toggle-3" class="layer-toggle" data-layer="10">
         <i class="fas fa-map" style="margin-right: 5px;"></i>
         <i class="fas fa-3"></i>
     </button>
@@ -289,6 +289,18 @@
     <script src="./resources/qgis2web.js"></script>
 
     <script>
+        document.querySelector('.number-toggle-3').addEventListener('click', function () {
+            // Recuperar o checkbox associado à camada de "Porcentagem de parques e bosques" (Camada 10)
+            const checkbox = document.querySelector('input[data-layer="10"]');
+
+            // Alternar o estado do checkbox
+            checkbox.checked = !checkbox.checked;
+
+            // Atualizar a visibilidade da camada com base no estado do checkbox
+            const layer = map.getLayers().item(10); // Camada 10 corresponde ao índice 9 (contagem começa do 0)
+            layer.setVisible(checkbox.checked);
+        });
+
         // Configurar os toggles de camadas para cada mapa separadamente
         document.querySelectorAll('.layer-toggle').forEach(toggle => {
             // Inicializa a visibilidade das camadas com base no estado do checkbox
