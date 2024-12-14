@@ -4,25 +4,25 @@ html, body {
     height: 100%;
     margin: 0;
     padding: 0;
+    overflow: hidden;    
 }
 
-header{
+header {
     background-color: rgb(233, 233, 233);
     color: rgb(92, 92, 92);
     padding: 12px;
     text-align: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
 }
 
 header h3,h4{
     margin: 0 !important;
 }
 
-#map {
-    width: 100%;
-    height: 90%;
-}
-
-footer{
+footer {
     background-color: #333;
     color: white;
     padding: 10px;
@@ -30,6 +30,7 @@ footer{
     position: fixed;
     bottom: 0;
     width: 100%;
+    z-index: 1100; /* Ensure it appears above other elements */
 }
 
 footer p{
@@ -37,7 +38,7 @@ footer p{
 }
 
 #feature-box {
-    position: absolute;
+    position: fixed;
     top: 10px;
     right: 10px;
     background-color: rgba(255, 255, 255, 0.9);
@@ -70,10 +71,11 @@ footer p{
     background-color: rgba(248, 248, 248, 0.7) !important;
 }
 
-#menu-toggle {
-    position: absolute;
+/**/
+
+.icon-button {
+    position: fixed;
     top: 10px;
-    right: 10px;
     background-color: lightgray;
     color: rgb(92, 92, 92);
     border: none;
@@ -86,17 +88,75 @@ footer p{
     justify-content: center;
 }
 
-#menu-toggle:hover {
+.icon-button:hover {
     background-color: rgb(181, 181, 181);
     color: white;
 }
 
-#menu-toggle i {
+.icon-button i {
     font-size: 16px;
 }
 
+.person-toggle {
+    right: 304px;
+}
+
+.info-toggle{
+    right: 265px;
+}
+
+.document-toggle{
+    right: 230px;
+}
+
+.number-toggle-3 {
+    right: 50px;
+}
+
+.number-toggle-2 {
+    right: 107px;
+}
+
+.number-toggle-1 {
+    right: 164px;
+}
+
+.menu-toggle{
+    right: 10px;
+}
+
+/**/
+
+.img {
+    position: fixed;
+    top: 10px;
+    border: none;
+    cursor: pointer;
+    z-index: 1100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.img1 {
+    left: 10px;
+}
+
+.img2 {
+    left: 70px;
+}
+
+.img3 {
+    left: 110px;
+}
+
+.img4 {
+    left: 180px;
+}
+/**/
+
 #legend-container {
-    position: absolute;
+    position: fixed;
     bottom: 50px;
     left: 10px;
     background-color: rgba(255, 255, 255, 0.9);
