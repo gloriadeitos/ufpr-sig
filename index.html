@@ -65,7 +65,18 @@
     <button class="icon-button info-toggle"><i class="fas fa-info-circle"></i></button>
 
     <!-- Ícone de Documento -->
-    <button class="icon-button document-toggle"><i class="fas fa-file-alt"></i></button>
+    <button id="document-toggle" class="icon-button document-toggle"><i class="fas fa-file-alt"></i></button>
+
+    <div id="feature-box-document" style="margin-top: 50px; display: none;"> <!-- Menu inicialmente fechado -->
+        <h3>Documentos</h3>
+        <hr>
+        <button id="download-pdf">
+            <a href="./pdf/Mapa03-ODS11-CoberturaVerde-GloriaDeitos.pdf" download
+                style="text-decoration: none; color: inherit;">
+                Baixar PDF
+            </a>
+        </button>
+    </div>
 
     <!-- Ícone de Número 1 -->
     <button class="icon-button number-toggle-1" id="toggle-all-layers-map1" data-container="map1">
@@ -364,6 +375,22 @@
         // Inicialmente, o menu está fechado
         featureBox.style.display = 'none';
 
+        // Função para exibir/ocultar o menu de camadas
+        const documentToggle = document.getElementById('document-toggle');
+        const featureBoxDocument = document.getElementById('feature-box-document');
+
+        documentToggle.addEventListener('click', () => {
+            if (featureBoxDocument.style.display === 'none') {
+                featureBoxDocument.style.display = 'block';
+                documentToggle.innerHTML = '<i class="fas fa-times"></i>'; // Ícone de fechar
+            } else {
+                featureBoxDocument.style.display = 'none';
+                documentToggle.innerHTML = '<i class="fas fa-file-alt"></i>'; // Ícone de camadas
+            }
+        });
+
+        // Inicialmente, o menu está fechado
+        featureBoxDocument.style.display = 'none';
 
         // == LEGENDAS
 
