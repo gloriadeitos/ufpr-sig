@@ -20,7 +20,7 @@
 
 <br>
 
-## 🇺🇸 Summary / 🇧🇷 Resumo
+## 🇺🇸 Summary | 🇧🇷 Resumo
 
 ### 🇺🇸 - Spatial Analysis of SDG 11: Sustainable Development in Curitiba-PR
 
